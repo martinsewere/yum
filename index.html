@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ <!-- Link Bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Link style.css file -->
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<!-- Firebase CDN -->
+<script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+
+ 
+<title>YUM.</title>
+</head>
+
+
+<body>
+	<!-- Navbar -->
+	<h3 class="mush-title">Mush</h3>
+		<a href="#"><button type="button" id="logout" class="btn logout btn-default navbar-btn">Logout </button></a>	
+
+		<a href="#"><button type="button" id="login" class="btn login btn-default navbar-btn">Sign in
+		</button></a>	
+	</div>
+	
+	<!-- Jumbotron -->
+	<div class="jumbotron">
+		<h1 class="display-3">Stop staring at your fridge.</h1>
+		<p class="lead">Find a recipe using the ingredients you already have. Or find the ingredients you'll need for a recipe. </p>
+		<p class="btn btn-primary btn-lg" id="find-recipe-btn" role="button">Find a recipe</p>
+		<p class="btn btn-primary btn-lg" id="find-ingredient-btn" href="#" role="button">Find the ingredients</p>
+	</div>
+	
+	
+<!-- List ingredients -->
+<div class = "container input-container">
+	<div class="row">
+		<div class="form col-md-6 recipe-search">
+		List your ingredients:
+		<hr>
+		<br>
+			<div class="form-group">
+			  <input type="text" class="form-control" id="ingredient-input" placeholder="List an ingredient">
+			</div>
+			
+			
+			<!-- Submit button -->
+			<div class="row">
+			<button type="submit" class="btn btn-default submit-ingredient">Add ingredient</button>
+			</div>
+
+			<div class="ingredient-list">
+			<!-- This is where the listed ingredients will populate. -->
+			</div>
+
+			<div class="row">
+			<button type="submit" class="btn btn-default submit-all">Find me a recipe!</button>
+			</div>
+		</div>
+
+		
+		
+
+		<!-- Search for a recipe -->
+		<div class="form col-md-6 ingredient-search">
+		Search for a meal:
+		<hr>
+		<br>
+			<div class="input-group">
+    			<input type="text" class="form-control" id="recipe-input" placeholder="Search for...">
+    			<span class="input-group-btn">
+        			<button class="btn btn-default submit-recipe" type="button">Go!
+        			</button>
+      			</span>
+    		</div>
+			
+		</div>
+	</div>
+</div>
+
+
+<!-- Masonry images -->
+
+<div id="search-result">
+</div>
+
+<!-- Detailed Results -->
+<div class="container meals">
+	<a href="index.html"><i class="fa fa-chevron-left" aria-hidden="true"></i>Go back</a>
+	<div class="row">
+		<div class="col-md-12">
+			<h2 class="title-result">Meal</h2>
+		</div>
+	<div class="row">
+		<div class="col-md-12">
+				<a href="#" class="thumbnail img-responsive food-image">
+				  <img src="" alt="">
+				</a>
+		</div>
+	<div class="row">
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel heading"> Summary
+				</div>
+				<div class="panel-body summary-data">
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel heading"> Preparation
+				</div>
+				<div class="panel-body prep-data">
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+	</div>
+</div>
+
+
+ <!-- Link to masonry -->
+<!-- Link font awesome -->
+<script src="https://use.fontawesome.com/493f6390c9.js"></script>
+<!-- Link jQuery -->
+<script
+ src="https://code.jquery.com/jquery-3.2.1.js"
+ integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+ crossorigin="anonymous"></script>
+
+ <!-- Link script.js file -->
+<script type="text/javascript" src="script.js"></script>
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+ 
+</body>
+
+
+</html>
