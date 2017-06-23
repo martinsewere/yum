@@ -8,10 +8,6 @@ padding-right: 20px;
 	margin-right: 10px;
 }
 .jumbotron {
- /*   background: url('Background_image.png') no-repeat center center;
-    position: fixed;
-	min-height: 500px;
-	text-align: center;*/
     background-image: url("background_image1.png");
     background-color: #17234E;
     margin-bottom: 0;
