@@ -67,7 +67,6 @@ $(document).ready(function() {
 //Submit ingredients or search for a recipe. Toggle.
 	$("#find-recipe-btn").on("click", function () {
 		$(".ingredient-search").hide();
-		// $(".container").show();
 		$(".recipe-search").show();
 		$(".input-container").show();
 		$("#search-result").hide();
@@ -75,7 +74,6 @@ $(document).ready(function() {
 
 	$("#find-ingredient-btn").on("click", function () {
 		$(".recipe-search").hide();
-		// $(".container").show();
 		$(".ingredient-search").show();
 		$(".input-container").show();
 		$("#search-result").hide();
@@ -100,10 +98,8 @@ $(document).ready(function() {
 
 		if (ingredientInput === "") {
 			console.log("Please choose at least one ingredient.");
-			// $("#ingredient-input").clear();
 		} else if (ingredientCount === 6) {
 			$("#ingredient-input").val("");
-			// $("#ingredient-input").clear();
 			console.log("No more.")
 
 		} else {
@@ -131,8 +127,6 @@ $(document).ready(function() {
 		var ingredientsOutput = ingredients.join('%2C');
 
 		var url = fridgeSearchUrl + ingredientsOutput + fridgeSearchKey;
-		console.log(url);
-		// console.log(ingredientsOutput);
 
 		//Ajax call for the image.
 		$.ajax({
@@ -180,10 +174,6 @@ $(document).ready(function() {
 		        $(".clickpart"+i).attr("dataId", dataId).attr("title", response[i].title);
 		        console.log(response[i].title);
 		        $('#title-'+i).text(response[i].title);
-		        //$('#link-'+i).attr("href", mealurl);
-		        // $('#title-'+i).text(response[i].title);
-
-
 
 			};
 
@@ -196,6 +186,9 @@ $(document).ready(function() {
 
 	//To search a desired recipe.
 	$(".submit-recipe").one("click", function(){
+		$(".input-container").hide();
+		$("#search-result").show();
+
 		var recipeInput = $("#recipe-input").val().trim();
 		recipe.push(recipeInput);
 
@@ -267,10 +260,8 @@ $(document).ready(function() {
 function nextPage() {
 
 	//When the image on the main page is clicked...
-	// $("#search-result").on("click", "a", function() {
 	$(document).on("click", "a", function() {
-		// console.log($(this).attr("class"));
-		// console.log($(this).attr('clicked', $(event.target[0].className)));
+
 		var nextInput = $(this).attr("dataId");
 		console.log(this);
 		console.log("test 1  " + nextInput);
@@ -278,7 +269,7 @@ function nextPage() {
 	    var nextUrl = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/";
 	    var nextKey = "/analyzedInstructions?stepBreakdown=false&mashape-key=ksQNPjlaz5mshWX43x5882DMHPUtp1ynBxNjsnjPXrtU69MEyX";
 	    var queryNextURL = nextUrl + nextInput + nextKey;
-	    // console.log(queryNextURL);
+
 	    $.ajax({
 	        url: queryNextURL,
 	        method: "GET"
@@ -323,7 +314,6 @@ function nextPage() {
 	        method: "GET"
 	      
 	    }).done(function(response) {
-	        // console.log(response.items[0].id.videoId);
 
 	        var resultInput = response.items[0].id.videoId;
 	       
