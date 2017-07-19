@@ -1,5 +1,6 @@
 # yum
 https://martinsewere.github.io/yum/
+
 Yum is a Web app that allows users to input into fields all ingredients they have at home. After hitting the search
 button, recipes from multiple websites query the input data and outputs recipes that use that exact result. 
 If you are confounded by what the heck you want for dinner, Yum is here!
